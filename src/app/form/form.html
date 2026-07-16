@@ -1,0 +1,88 @@
+<div class="container">
+  <mat-card>
+    <h2>Add Blog</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="blog.title" name="title">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Content</mat-label>
+      <textarea matInput rows="5" [(ngModel)]="blog.content" name="content"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <mat-select
+        [(ngModel)]="blog.category"
+        name="category">
+        <mat-option value="food">
+          Food
+        </mat-option>
+        <mat-option value="makeup">
+          Makeup
+        </mat-option>
+        <mat-option value="travel">
+          Travel
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  =  <mat-form-field appearance="outline">
+      <mat-label>Author Name</mat-label>
+      <input
+        matInput
+        [(ngModel)]="blog.authorName"
+        name="author">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Publish Date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="blog.publishDate"
+        name="publishDate">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker>
+      </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        Featured Image URL
+      </mat-label>
+      <input
+        matInput
+        [(ngModel)]="blog.featuredImageUrl"
+        name="image">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        Reading Time (Minutes)
+      </mat-label>
+      <input matInput type="number" [(ngModel)]="blog.readingTime" name="readingTime">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select
+        [(ngModel)]="blog.status"
+        name="status">
+        <mat-option value="draft">
+          Draft
+        </mat-option>
+        <mat-option value="published">
+          Published
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        Tags (using comma for separated)
+      </mat-label>
+      <input
+        matInput
+        [(ngModel)]="blog.tags"
+        name="tags">
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addBlogs()">
+      Save Blog
+    </button>
+  </mat-card>
+</div>

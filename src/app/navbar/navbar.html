@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+<span class="logo">
+    Blogs CMS
+  </span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="isLoggedIn()">
+    <button mat-button routerLink="/home"> Home</button>
+    <button mat-button routerLink="/"> Blogs</button>
+    <button mat-button routerLink="/add">Add Blog</button>
+    <button mat-button (click)="toggleTheme()">
+  {{ theme === 'light' ? 'Dark Mode' : ' Light Mode' }}
+</button>
+    <button mat-button (click)="logout()"> Logout</button>
+  </ng-container>
+  <ng-container *ngIf="!isLoggedIn()">
+    <button mat-button routerLink="/login">
+      Login
+    </button>
+    <button mat-button routerLink="/register">
+      Register
+    </button>
+  </ng-container>
+</mat-toolbar>

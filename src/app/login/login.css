@@ -1,0 +1,22 @@
+.container{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.login-card{
+  width:400px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+mat-form-field{
+  width:100%;
+}
+
+button{
+  width:100%;
+}
